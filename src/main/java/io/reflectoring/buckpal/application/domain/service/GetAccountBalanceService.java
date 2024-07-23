@@ -8,12 +8,18 @@ import org.springframework.stereotype.Service;
 
 import java.time.LocalDateTime;
 
+/**
+ * アカウント残高取得サービス
+ */
 @Service
 @RequiredArgsConstructor
 class GetAccountBalanceService implements GetAccountBalanceUseCase {
 
 	private final LoadAccountPort loadAccountPort;
 
+	/**
+	 * アカウント残高取得
+	 */
 	@Override
 	public Money getAccountBalance(GetAccountBalanceQuery query) {
 		return loadAccountPort.loadAccount(query.accountId(), LocalDateTime.now())

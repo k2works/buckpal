@@ -15,6 +15,9 @@ import org.springframework.stereotype.Service;
 
 import java.time.LocalDateTime;
 
+/**
+ * 送金サービス
+ */
 @Service
 @RequiredArgsConstructor
 @UseCase
@@ -26,6 +29,9 @@ public class SendMoneyService implements SendMoneyUseCase {
 	private final UpdateAccountStatePort updateAccountStatePort;
 	private final MoneyTransferProperties moneyTransferProperties;
 
+	/**
+	 * 送金
+	 */
 	@Override
 	public boolean sendMoney(SendMoneyCommand command) {
 
@@ -67,6 +73,9 @@ public class SendMoneyService implements SendMoneyUseCase {
 		return true;
 	}
 
+	/**
+	 * 確認
+	 */
 	private void checkThreshold(SendMoneyCommand command) {
 		if(command.money().isGreaterThan(moneyTransferProperties.getMaximumTransferThreshold())){
 			throw new ThresholdExceededException(moneyTransferProperties.getMaximumTransferThreshold(), command.money());

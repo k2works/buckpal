@@ -10,6 +10,7 @@ import java.util.List;
 import lombok.NonNull;
 
 /**
+ * 履歴
  * A window of account activities.
  */
 public class ActivityWindow {

@@ -9,6 +9,7 @@ import lombok.Getter;
 import lombok.Value;
 
 /**
+ * アカウント
  * An account that holds a certain amount of money. An {@link Account} object only
  * contains a window of the latest account activities. The total balance of the account is
  * the sum of a baseline balance that was valid before the first activity in the

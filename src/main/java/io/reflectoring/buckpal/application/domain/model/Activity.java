@@ -8,6 +8,7 @@ import lombok.RequiredArgsConstructor;
 import lombok.Value;
 
 /**
+ * 活動
  * A money transfer activity between {@link Account}s.
  */
 @Value

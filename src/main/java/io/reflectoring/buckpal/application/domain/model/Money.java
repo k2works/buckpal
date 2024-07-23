@@ -5,6 +5,9 @@ import java.math.BigInteger;
 import lombok.NonNull;
 import lombok.Value;
 
+/**
+ * 金額
+ */
 @Value
 public class Money {
 
