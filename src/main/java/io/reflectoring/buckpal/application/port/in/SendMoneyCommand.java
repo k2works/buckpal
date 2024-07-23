@@ -6,6 +6,9 @@ import jakarta.validation.constraints.NotNull;
 
 import static io.reflectoring.buckpal.common.validation.Validation.validate;
 
+/**
+ * 送金コマンド
+ */
 public record SendMoneyCommand(
         @NotNull AccountId sourceAccountId,
         @NotNull AccountId targetAccountId,
