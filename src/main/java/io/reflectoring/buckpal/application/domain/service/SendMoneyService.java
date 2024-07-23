@@ -11,8 +11,11 @@ import io.reflectoring.buckpal.application.domain.model.Account.AccountId;
 import lombok.RequiredArgsConstructor;
 
 import jakarta.transaction.Transactional;
+import org.springframework.stereotype.Service;
+
 import java.time.LocalDateTime;
 
+@Service
 @RequiredArgsConstructor
 @UseCase
 @Transactional

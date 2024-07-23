@@ -9,9 +9,12 @@ import io.reflectoring.buckpal.common.PersistenceAdapter;
 import lombok.RequiredArgsConstructor;
 
 import jakarta.persistence.EntityNotFoundException;
+import org.springframework.stereotype.Repository;
+
 import java.time.LocalDateTime;
 import java.util.List;
 
+@Repository
 @RequiredArgsConstructor
 @PersistenceAdapter
 class AccountPersistenceAdapter implements

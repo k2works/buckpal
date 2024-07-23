@@ -4,9 +4,11 @@ import io.reflectoring.buckpal.application.domain.model.Money;
 import io.reflectoring.buckpal.application.port.in.GetAccountBalanceUseCase;
 import io.reflectoring.buckpal.application.port.out.LoadAccountPort;
 import lombok.RequiredArgsConstructor;
+import org.springframework.stereotype.Service;
 
 import java.time.LocalDateTime;
 
+@Service
 @RequiredArgsConstructor
 class GetAccountBalanceService implements GetAccountBalanceUseCase {
 
