@@ -6,7 +6,7 @@ import java.util.List;
 import io.reflectoring.buckpal.application.domain.model.Account;
 import io.reflectoring.buckpal.application.domain.model.AccountId;
 import io.reflectoring.buckpal.application.domain.model.Activity;
-import io.reflectoring.buckpal.application.domain.model.Activity.ActivityId;
+import io.reflectoring.buckpal.application.domain.model.ActivityId;
 import io.reflectoring.buckpal.application.domain.model.ActivityWindow;
 import io.reflectoring.buckpal.application.domain.model.Money;
 import org.springframework.stereotype.Component;

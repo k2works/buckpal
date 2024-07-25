@@ -61,10 +61,4 @@ public class Activity {
 		this.timestamp = timestamp;
 		this.money = money;
 	}
-
-	@Value
-	public static class ActivityId {
-		Long value;
-	}
-
 }
