@@ -20,6 +20,7 @@ public class ActivityWindow {
 	private final List<Activity> activities;
 
 	/**
+	 * 開始時間取得
 	 * このウィンドウ内の最初の取引のタイムスタンプを取得します。
 	 */
 	public LocalDateTime getStartTimestamp() {
@@ -30,6 +31,7 @@ public class ActivityWindow {
 	}
 
 	/**
+	 * 終了時間取得
 	 * このウィンドウ内の最後の取引のタイムスタンプを取得します。
 	 * @return タイムスタンプ
 	 */
@@ -41,6 +43,7 @@ public class ActivityWindow {
 	}
 
 	/**
+	 * 残高計算
 	 * この取引履歴のすべての取引の値を合計して残高を計算します。
 	 */
 	public Money calculateBalance(AccountId accountId) {
@@ -64,6 +67,7 @@ public class ActivityWindow {
 	}
 
 	/**
+	 * 取引一覧
 	 * この取引履歴の取引のリストを取得します。
 	 * @return 取引のリスト
 	 */
@@ -72,6 +76,7 @@ public class ActivityWindow {
 	}
 
 	/**
+	 * 取引追加
 	 * 取引を取引履歴に追加します。
 	 * @param activity 追加する取引
 	 */

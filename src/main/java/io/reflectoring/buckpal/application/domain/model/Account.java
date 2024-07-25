@@ -17,12 +17,13 @@ import lombok.Getter;
 public class Account {
 
 	/**
-	 * 口座の一意のID。
+	 * 口座ID。
 	 */
 	private final AccountId id;
 
 	/**
-	 * 口座の基準残高。これは 取引履歴 内の最初の活動前の口座の残高を示します。
+	 * 口座の基準残高。
+	 * これは 取引履歴 内の最初の活動前の口座の残高を示します。
 	 */
 	@Getter private final Money baselineBalance;
 
@@ -32,6 +33,7 @@ public class Account {
 	@Getter private final ActivityWindow activityWindow;
 
 	/**
+	 * IDなし口座
 	 * IDなしの {@link Account} エンティティを作成します。まだ永続化されていない新しいエンティティを作成するために使用します。
 	 */
 	public static Account withoutId(
@@ -41,6 +43,7 @@ public class Account {
 	}
 
 	/**
+	 * ID付き口座
 	 * ID付きの {@link Account} エンティティを作成します。永続化されたエンティティを再構成するときに使用します。
 	 */
 	public static Account withId(
@@ -55,6 +58,7 @@ public class Account {
 	}
 
 	/**
+	 * 口座の総残高計算
 	 * 基準残高に取引履歴を追加して口座の総残高を計算します。
 	 */
 	public Money calculateBalance() {
@@ -64,6 +68,7 @@ public class Account {
 	}
 
 	/**
+	 * 口座引き出し
 	 * この口座から一定の金額を引き出そうとします。
 	 * 成功した場合、負の値を持つ新しい取引を作成します。
 	 *
@@ -93,6 +98,7 @@ public class Account {
 	}
 
 	/**
+	 * 口座入金
 	 * この口座に一定の金額を預けようとします。
 	 * 成功した場合、正の値を持つ新しい取引を作成します。
 	 *
