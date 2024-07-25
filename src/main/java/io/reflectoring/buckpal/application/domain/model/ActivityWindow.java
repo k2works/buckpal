@@ -11,11 +11,11 @@ import lombok.NonNull;
 
 /**
  * 取引履歴
- * アカウントの取引履歴。
+ * 口座の取引履歴。
  */
 public class ActivityWindow {
 	/**
-	 * このウィンドウ内のアカウント取引のリスト。
+	 * このウィンドウ内の口座取引のリスト。
 	 */
 	private final List<Activity> activities;
 

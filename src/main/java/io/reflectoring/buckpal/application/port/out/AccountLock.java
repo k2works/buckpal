@@ -4,7 +4,7 @@ import io.reflectoring.buckpal.application.domain.model.Account;
 import io.reflectoring.buckpal.application.domain.model.AccountId;
 
 /**
- * アカウントロックポート
+ * 口座ロックポート
  */
 public interface AccountLock {
 

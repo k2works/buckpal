@@ -6,29 +6,28 @@ import java.util.Optional;
 import lombok.AccessLevel;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
-import lombok.Value;
 
 /**
- * アカウント
- * 一定の金額を保持するアカウント。{@link Account} オブジェクトは最新のアカウント活動のウィンドウのみを含みます。
- * アカウントの総残高は、取引履歴の最初の取引が発生する前に有効だった基準残高と
+ * 口座
+ * 一定の金額を保持する口座。{@link Account} オブジェクトは最新の口座活動のウィンドウのみを含みます。
+ * 口座の総残高は、取引履歴の最初の取引が発生する前に有効だった基準残高と
  * 活動値の合計の合算です。
  */
 @AllArgsConstructor(access = AccessLevel.PRIVATE)
 public class Account {
 
 	/**
-	 * アカウントの一意のID。
+	 * 口座の一意のID。
 	 */
 	private final AccountId id;
 
 	/**
-	 * アカウントの基準残高。これは 取引履歴 内の最初の活動前のアカウントの残高を示します。
+	 * 口座の基準残高。これは 取引履歴 内の最初の活動前の口座の残高を示します。
 	 */
 	@Getter private final Money baselineBalance;
 
 	/**
-	 * このアカウントの最新の取引履歴。
+	 * この口座の最新の取引履歴。
 	 */
 	@Getter private final ActivityWindow activityWindow;
 
@@ -56,7 +55,7 @@ public class Account {
 	}
 
 	/**
-	 * 基準残高に取引履歴を追加してアカウントの総残高を計算します。
+	 * 基準残高に取引履歴を追加して口座の総残高を計算します。
 	 */
 	public Money calculateBalance() {
 		return Money.add(
@@ -65,7 +64,7 @@ public class Account {
 	}
 
 	/**
-	 * このアカウントから一定の金額を引き出そうとします。
+	 * この口座から一定の金額を引き出そうとします。
 	 * 成功した場合、負の値を持つ新しい取引を作成します。
 	 *
 	 * @return 引き出しが成功した場合は true、そうでない場合は false。
@@ -94,7 +93,7 @@ public class Account {
 	}
 
 	/**
-	 * このアカウントに一定の金額を預けようとします。
+	 * この口座に一定の金額を預けようとします。
 	 * 成功した場合、正の値を持つ新しい取引を作成します。
 	 *
 	 * @return 預け入れが成功した場合は true、そうでない場合は false。

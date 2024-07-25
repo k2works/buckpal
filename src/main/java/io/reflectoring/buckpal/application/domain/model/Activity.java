@@ -19,19 +19,19 @@ public class Activity {
 	ActivityId id;
 
 	/**
-	 * この活動を所有するアカウント。
+	 * この活動を所有する口座。
 	 */
 	@NonNull
     AccountId ownerAccountId;
 
 	/**
-	 * 出金元アカウント。
+	 * 出金元口座。
 	 */
 	@NonNull
     AccountId sourceAccountId;
 
 	/**
-	 * 入金先アカウント。
+	 * 入金先口座。
 	 */
 	@NonNull
     AccountId targetAccountId;
@@ -43,7 +43,7 @@ public class Activity {
     LocalDateTime timestamp;
 
 	/**
-	 * アカウント間で移動したお金。
+	 * 口座間で移動したお金。
 	 */
 	@NonNull
     Money money;
