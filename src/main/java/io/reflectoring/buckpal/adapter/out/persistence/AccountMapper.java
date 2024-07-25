@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import io.reflectoring.buckpal.application.domain.model.Account;
-import io.reflectoring.buckpal.application.domain.model.Account.AccountId;
+import io.reflectoring.buckpal.application.domain.model.AccountId;
 import io.reflectoring.buckpal.application.domain.model.Activity;
 import io.reflectoring.buckpal.application.domain.model.Activity.ActivityId;
 import io.reflectoring.buckpal.application.domain.model.ActivityWindow;

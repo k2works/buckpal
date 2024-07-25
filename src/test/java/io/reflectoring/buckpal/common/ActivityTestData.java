@@ -2,7 +2,7 @@ package io.reflectoring.buckpal.common;
 
 import java.time.LocalDateTime;
 
-import io.reflectoring.buckpal.application.domain.model.Account.AccountId;
+import io.reflectoring.buckpal.application.domain.model.AccountId;
 import io.reflectoring.buckpal.application.domain.model.Activity;
 import io.reflectoring.buckpal.application.domain.model.Activity.ActivityId;
 import io.reflectoring.buckpal.application.domain.model.Money;

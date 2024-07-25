@@ -1,7 +1,7 @@
 package io.reflectoring.buckpal.common;
 
 import io.reflectoring.buckpal.application.domain.model.Account;
-import io.reflectoring.buckpal.application.domain.model.Account.AccountId;
+import io.reflectoring.buckpal.application.domain.model.AccountId;
 import io.reflectoring.buckpal.application.domain.model.ActivityWindow;
 import io.reflectoring.buckpal.application.domain.model.Money;
 

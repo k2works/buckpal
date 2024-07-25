@@ -43,7 +43,7 @@ public class ActivityWindow {
 	/**
 	 * この取引履歴のすべての取引の値を合計して残高を計算します。
 	 */
-	public Money calculateBalance(Account.AccountId accountId) {
+	public Money calculateBalance(AccountId accountId) {
 		Money depositBalance = activities.stream()
 				.filter(a -> a.getTargetAccountId().equals(accountId))
 				.map(Activity::getMoney)

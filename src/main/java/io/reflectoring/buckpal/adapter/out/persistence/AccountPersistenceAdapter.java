@@ -1,7 +1,7 @@
 package io.reflectoring.buckpal.adapter.out.persistence;
 
 import io.reflectoring.buckpal.application.domain.model.Account;
-import io.reflectoring.buckpal.application.domain.model.Account.AccountId;
+import io.reflectoring.buckpal.application.domain.model.AccountId;
 import io.reflectoring.buckpal.application.domain.model.Activity;
 import io.reflectoring.buckpal.application.port.out.LoadAccountPort;
 import io.reflectoring.buckpal.application.port.out.UpdateAccountStatePort;

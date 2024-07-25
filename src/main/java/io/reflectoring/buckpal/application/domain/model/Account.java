@@ -109,10 +109,4 @@ public class Account {
 		this.activityWindow.addActivity(deposit);
 		return true;
 	}
-
-	@Value
-	public static class AccountId {
-		Long value;
-	}
-
 }

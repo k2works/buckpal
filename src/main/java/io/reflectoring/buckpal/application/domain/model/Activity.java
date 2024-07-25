@@ -22,19 +22,19 @@ public class Activity {
 	 * この活動を所有するアカウント。
 	 */
 	@NonNull
-    Account.AccountId ownerAccountId;
+    AccountId ownerAccountId;
 
 	/**
 	 * 出金元アカウント。
 	 */
 	@NonNull
-    Account.AccountId sourceAccountId;
+    AccountId sourceAccountId;
 
 	/**
 	 * 入金先アカウント。
 	 */
 	@NonNull
-    Account.AccountId targetAccountId;
+    AccountId targetAccountId;
 
 	/**
 	 * 取引のタイムスタンプ。
@@ -49,9 +49,9 @@ public class Activity {
     Money money;
 
 	public Activity(
-			@NonNull Account.AccountId ownerAccountId,
-			@NonNull Account.AccountId sourceAccountId,
-			@NonNull Account.AccountId targetAccountId,
+			@NonNull AccountId ownerAccountId,
+			@NonNull AccountId sourceAccountId,
+			@NonNull AccountId targetAccountId,
 			@NonNull LocalDateTime timestamp,
 			@NonNull Money money) {
 		this.id = null;

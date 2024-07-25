@@ -5,7 +5,7 @@ import io.reflectoring.buckpal.application.port.out.AccountLock;
 import io.reflectoring.buckpal.application.port.out.LoadAccountPort;
 import io.reflectoring.buckpal.application.port.out.UpdateAccountStatePort;
 import io.reflectoring.buckpal.application.domain.model.Account;
-import io.reflectoring.buckpal.application.domain.model.Account.AccountId;
+import io.reflectoring.buckpal.application.domain.model.AccountId;
 import io.reflectoring.buckpal.application.domain.model.Money;
 import org.junit.jupiter.api.Test;
 import org.mockito.ArgumentCaptor;

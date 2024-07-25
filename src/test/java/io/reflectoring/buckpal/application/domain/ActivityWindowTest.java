@@ -2,7 +2,7 @@ package io.reflectoring.buckpal.application.domain;
 
 import java.time.LocalDateTime;
 
-import io.reflectoring.buckpal.application.domain.model.Account.AccountId;
+import io.reflectoring.buckpal.application.domain.model.AccountId;
 import io.reflectoring.buckpal.application.domain.model.ActivityWindow;
 import io.reflectoring.buckpal.application.domain.model.Money;
 import org.assertj.core.api.Assertions;

@@ -1,6 +1,7 @@
 package io.reflectoring.buckpal.application.port.in;
 
 import io.reflectoring.buckpal.application.domain.model.Account;
+import io.reflectoring.buckpal.application.domain.model.AccountId;
 import io.reflectoring.buckpal.application.domain.model.Money;
 import jakarta.validation.ConstraintViolationException;
 import org.junit.jupiter.api.Assertions;
@@ -13,8 +14,8 @@ class SendMoneyCommandTest {
     @Test
     public void validationOk() {
         new SendMoneyCommand(
-                new Account.AccountId(42L),
-                new Account.AccountId(43L),
+                new AccountId(42L),
+                new AccountId(43L),
                 new Money(new BigInteger("10")));
         // no exception
     }
@@ -23,8 +24,8 @@ class SendMoneyCommandTest {
     public void moneyValidationFails() {
         Assertions.assertThrows(ConstraintViolationException.class, () -> {
             new SendMoneyCommand(
-                    new Account.AccountId(42L),
-                    new Account.AccountId(43L),
+                    new AccountId(42L),
+                    new AccountId(43L),
                     new Money(new BigInteger("-10")));
         });
     }
@@ -33,7 +34,7 @@ class SendMoneyCommandTest {
     public void accountIdValidationFails() {
         Assertions.assertThrows(ConstraintViolationException.class, () -> {
             new SendMoneyCommand(
-                    new Account.AccountId(42L),
+                    new AccountId(42L),
                     null,
                     new Money(new BigInteger("10")));
         });

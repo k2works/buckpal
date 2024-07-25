@@ -2,7 +2,7 @@ package io.reflectoring.buckpal.adapter.in.web;
 
 import io.reflectoring.buckpal.application.port.in.SendMoneyUseCase;
 import io.reflectoring.buckpal.application.port.in.SendMoneyCommand;
-import io.reflectoring.buckpal.application.domain.model.Account.AccountId;
+import io.reflectoring.buckpal.application.domain.model.AccountId;
 import io.reflectoring.buckpal.application.domain.model.Money;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
