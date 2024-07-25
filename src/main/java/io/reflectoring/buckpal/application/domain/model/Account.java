@@ -10,47 +10,44 @@ import lombok.Value;
 
 /**
  * アカウント
- * An account that holds a certain amount of money. An {@link Account} object only
- * contains a window of the latest account activities. The total balance of the account is
- * the sum of a baseline balance that was valid before the first activity in the
- * window and the sum of the activity values.
+ * 一定の金額を保持するアカウント。{@link Account} オブジェクトは最新のアカウント活動のウィンドウのみを含みます。
+ * アカウントの総残高は、取引履歴の最初の取引が発生する前に有効だった基準残高と
+ * 活動値の合計の合算です。
  */
 @AllArgsConstructor(access = AccessLevel.PRIVATE)
 public class Account {
 
 	/**
-	 * The unique ID of the account.
+	 * アカウントの一意のID。
 	 */
 	private final AccountId id;
 
 	/**
-	 * The baseline balance of the account. This was the balance of the account before the first
-	 * activity in the activityWindow.
+	 * アカウントの基準残高。これは 取引履歴 内の最初の活動前のアカウントの残高を示します。
 	 */
 	@Getter private final Money baselineBalance;
 
 	/**
-	 * The window of latest activities on this account.
+	 * このアカウントの最新の取引履歴。
 	 */
 	@Getter private final ActivityWindow activityWindow;
 
 	/**
-	 * Creates an {@link Account} entity without an ID. Use to create a new entity that is not yet
-	 * persisted.
+	 * IDなしの {@link Account} エンティティを作成します。まだ永続化されていない新しいエンティティを作成するために使用します。
 	 */
 	public static Account withoutId(
-					Money baselineBalance,
-					ActivityWindow activityWindow) {
+			Money baselineBalance,
+			ActivityWindow activityWindow) {
 		return new Account(null, baselineBalance, activityWindow);
 	}
 
 	/**
-	 * Creates an {@link Account} entity with an ID. Use to reconstitute a persisted entity.
+	 * ID付きの {@link Account} エンティティを作成します。永続化されたエンティティを再構成するときに使用します。
 	 */
 	public static Account withId(
-					AccountId accountId,
-					Money baselineBalance,
-					ActivityWindow activityWindow) {
+			AccountId accountId,
+			Money baselineBalance,
+			ActivityWindow activityWindow) {
 		return new Account(accountId, baselineBalance, activityWindow);
 	}
 
@@ -59,7 +56,7 @@ public class Account {
 	}
 
 	/**
-	 * Calculates the total balance of the account by adding the activity values to the baseline balance.
+	 * 基準残高に取引履歴を追加してアカウントの総残高を計算します。
 	 */
 	public Money calculateBalance() {
 		return Money.add(
@@ -68,9 +65,10 @@ public class Account {
 	}
 
 	/**
-	 * Tries to withdraw a certain amount of money from this account.
-	 * If successful, creates a new activity with a negative value.
-	 * @return true if the withdrawal was successful, false if not.
+	 * このアカウントから一定の金額を引き出そうとします。
+	 * 成功した場合、負の値を持つ新しい取引を作成します。
+	 *
+	 * @return 引き出しが成功した場合は true、そうでない場合は false。
 	 */
 	public boolean withdraw(Money money, AccountId targetAccountId) {
 
@@ -90,15 +88,16 @@ public class Account {
 
 	private boolean mayWithdraw(Money money) {
 		return Money.add(
-				this.calculateBalance(),
-				money.negate())
+						this.calculateBalance(),
+						money.negate())
 				.isPositiveOrZero();
 	}
 
 	/**
-	 * Tries to deposit a certain amount of money to this account.
-	 * If sucessful, creates a new activity with a positive value.
-	 * @return true if the deposit was successful, false if not.
+	 * このアカウントに一定の金額を預けようとします。
+	 * 成功した場合、正の値を持つ新しい取引を作成します。
+	 *
+	 * @return 預け入れが成功した場合は true、そうでない場合は false。
 	 */
 	public boolean deposit(Money money, AccountId sourceAccountId) {
 		Activity deposit = new Activity(
@@ -113,7 +112,7 @@ public class Account {
 
 	@Value
 	public static class AccountId {
-		private Long value;
+		Long value;
 	}
 
 }

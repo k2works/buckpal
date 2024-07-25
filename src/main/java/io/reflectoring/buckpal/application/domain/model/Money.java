@@ -6,7 +6,7 @@ import lombok.NonNull;
 import lombok.Value;
 
 /**
- * 金額
+ * 貨幣
  */
 @Value
 public class Money {

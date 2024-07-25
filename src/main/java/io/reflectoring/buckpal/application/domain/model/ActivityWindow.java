@@ -10,18 +10,17 @@ import java.util.List;
 import lombok.NonNull;
 
 /**
- * 履歴
- * A window of account activities.
+ * 取引履歴
+ * アカウントの取引履歴。
  */
 public class ActivityWindow {
-
 	/**
-	 * The list of account activities within this window.
+	 * このウィンドウ内のアカウント取引のリスト。
 	 */
-	private List<Activity> activities;
+	private final List<Activity> activities;
 
 	/**
-	 * The timestamp of the first activity within this window.
+	 * このウィンドウ内の最初の取引のタイムスタンプを取得します。
 	 */
 	public LocalDateTime getStartTimestamp() {
 		return activities.stream()
@@ -31,8 +30,8 @@ public class ActivityWindow {
 	}
 
 	/**
-	 * The timestamp of the last activity within this window.
-	 * @return
+	 * このウィンドウ内の最後の取引のタイムスタンプを取得します。
+	 * @return タイムスタンプ
 	 */
 	public LocalDateTime getEndTimestamp() {
 		return activities.stream()
@@ -42,19 +41,17 @@ public class ActivityWindow {
 	}
 
 	/**
-	 * Calculates the balance by summing up the values of all activities within this window.
+	 * この取引履歴のすべての取引の値を合計して残高を計算します。
 	 */
 	public Money calculateBalance(Account.AccountId accountId) {
 		Money depositBalance = activities.stream()
 				.filter(a -> a.getTargetAccountId().equals(accountId))
 				.map(Activity::getMoney)
 				.reduce(Money.ZERO, Money::add);
-
 		Money withdrawalBalance = activities.stream()
 				.filter(a -> a.getSourceAccountId().equals(accountId))
 				.map(Activity::getMoney)
 				.reduce(Money.ZERO, Money::add);
-
 		return Money.add(depositBalance, withdrawalBalance.negate());
 	}
 
@@ -66,10 +63,18 @@ public class ActivityWindow {
 		this.activities = new ArrayList<>(Arrays.asList(activities));
 	}
 
+	/**
+	 * この取引履歴の取引のリストを取得します。
+	 * @return 取引のリスト
+	 */
 	public List<Activity> getActivities() {
 		return Collections.unmodifiableList(this.activities);
 	}
 
+	/**
+	 * 取引を取引履歴に追加します。
+	 * @param activity 追加する取引
+	 */
 	public void addActivity(Activity activity) {
 		this.activities.add(activity);
 	}

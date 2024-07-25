@@ -8,50 +8,45 @@ import lombok.RequiredArgsConstructor;
 import lombok.Value;
 
 /**
- * 活動
- * A money transfer activity between {@link Account}s.
+ * 取引
+ * {@link Account} 間のお金の取引。
  */
+@Getter
 @Value
 @RequiredArgsConstructor
 public class Activity {
 
-	@Getter
-	private ActivityId id;
+	ActivityId id;
 
 	/**
-	 * The account that owns this activity.
+	 * この活動を所有するアカウント。
 	 */
-	@Getter
 	@NonNull
-	private final Account.AccountId ownerAccountId;
+    Account.AccountId ownerAccountId;
 
 	/**
-	 * The debited account.
+	 * 出金元アカウント。
 	 */
-	@Getter
 	@NonNull
-	private final Account.AccountId sourceAccountId;
+    Account.AccountId sourceAccountId;
 
 	/**
-	 * The credited account.
+	 * 入金先アカウント。
 	 */
-	@Getter
 	@NonNull
-	private final Account.AccountId targetAccountId;
+    Account.AccountId targetAccountId;
 
 	/**
-	 * The timestamp of the activity.
+	 * 取引のタイムスタンプ。
 	 */
-	@Getter
 	@NonNull
-	private final LocalDateTime timestamp;
+    LocalDateTime timestamp;
 
 	/**
-	 * The money that was transferred between the accounts.
+	 * アカウント間で移動したお金。
 	 */
-	@Getter
 	@NonNull
-	private final Money money;
+    Money money;
 
 	public Activity(
 			@NonNull Account.AccountId ownerAccountId,
@@ -69,7 +64,7 @@ public class Activity {
 
 	@Value
 	public static class ActivityId {
-		private final Long value;
+		Long value;
 	}
 
 }
