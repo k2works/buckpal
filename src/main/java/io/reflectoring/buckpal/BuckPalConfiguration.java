@@ -11,8 +11,8 @@ import org.springframework.context.annotation.Configuration;
 public class BuckPalConfiguration {
 
   /**
-   * Adds a use-case-specific {@link MoneyTransferProperties} object to the application context. The properties
-   * are read from the Spring-Boot-specific {@link BuckPalConfigurationProperties} object.
+   * ユースケース固有の {@link MoneyTransferProperties} オブジェクトをアプリケーションコンテキストに追加します。
+   * プロパティはSpring-Boot固有の {@link BuckPalConfigurationProperties} オブジェクトから読み取られます。
    */
   @Bean
   public MoneyTransferProperties moneyTransferProperties(BuckPalConfigurationProperties buckPalConfigurationProperties){

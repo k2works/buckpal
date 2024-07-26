@@ -15,13 +15,13 @@ import lombok.NonNull;
  */
 public class ActivityWindow {
 	/**
-	 * このウィンドウ内の口座取引のリスト。
+	 * この取引履歴内の口座取引のリスト。
 	 */
 	private final List<Activity> activities;
 
 	/**
 	 * 開始時間取得
-	 * このウィンドウ内の最初の取引のタイムスタンプを取得します。
+	 * この取引履歴内の最初の取引のタイムスタンプを取得します。
 	 */
 	public LocalDateTime getStartTimestamp() {
 		return activities.stream()
@@ -32,7 +32,7 @@ public class ActivityWindow {
 
 	/**
 	 * 終了時間取得
-	 * このウィンドウ内の最後の取引のタイムスタンプを取得します。
+	 * この取引履歴内の最後の取引のタイムスタンプを取得します。
 	 * @return タイムスタンプ
 	 */
 	public LocalDateTime getEndTimestamp() {

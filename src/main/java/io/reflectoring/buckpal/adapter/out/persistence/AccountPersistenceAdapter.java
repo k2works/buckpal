@@ -14,6 +14,9 @@ import org.springframework.stereotype.Repository;
 import java.time.LocalDateTime;
 import java.util.List;
 
+/**
+ * 口座永続化アダプタ
+ */
 @Repository
 @RequiredArgsConstructor
 @PersistenceAdapter

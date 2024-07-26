@@ -8,14 +8,13 @@ import java.util.Set;
 import static jakarta.validation.Validation.buildDefaultValidatorFactory;
 
 public class Validation {
-
-  // Your IDE may complain that the ValidatorFactory needs to be closed, but if we do that here,
-  // we break the contract of ValidatorFactory#close.
+  // IDEがValidatorFactoryを閉じる必要があると警告する場合がありますが、
+  // ここでそれを行うとValidatorFactory#closeの契約に違反することになります。
   private final static Validator validator =
           buildDefaultValidatorFactory().getValidator();
 
   /**
-   * Evaluates all Bean Validation annotations on the subject.
+   * ビーンバリデーションの注釈をすべて評価します。
    */
   public static <T> void validate(T subject) {
     Set<ConstraintViolation<T>> violations = validator.validate(subject);

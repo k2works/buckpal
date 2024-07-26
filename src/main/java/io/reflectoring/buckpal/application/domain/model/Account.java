@@ -9,9 +9,9 @@ import lombok.Getter;
 
 /**
  * 口座
- * 一定の金額を保持する口座。{@link Account} オブジェクトは最新の口座活動のウィンドウのみを含みます。
+ * 一定の金額を保持する口座。{@link Account} オブジェクトは最新の取引履歴のみを含みます。
  * 口座の総残高は、取引履歴の最初の取引が発生する前に有効だった基準残高と
- * 活動値の合計の合算です。
+ * 取引の合計の合算です。
  */
 @AllArgsConstructor(access = AccessLevel.PRIVATE)
 public class Account {

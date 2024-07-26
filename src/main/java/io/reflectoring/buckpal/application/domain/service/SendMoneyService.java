@@ -74,7 +74,7 @@ public class SendMoneyService implements SendMoneyUseCase {
 	}
 
 	/**
-	 * 確認
+	 * 送金しきい値チェック
 	 */
 	private void checkThreshold(SendMoneyCommand command) {
 		if(command.money().isGreaterThan(moneyTransferProperties.getMaximumTransferThreshold())){

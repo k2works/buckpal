@@ -6,7 +6,7 @@ import io.reflectoring.buckpal.application.domain.model.Account;
 import io.reflectoring.buckpal.application.domain.model.AccountId;
 
 /**
- * 口座ロードポート
+ * 口座読み込みポート
  */
 public interface LoadAccountPort {
 

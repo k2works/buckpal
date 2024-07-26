@@ -7,7 +7,6 @@ import lombok.NoArgsConstructor;
 
 /**
  * 送金ユースケースのための設定プロパティ
- * Configuration properties for money transfer use cases.
  */
 @Data
 @AllArgsConstructor
